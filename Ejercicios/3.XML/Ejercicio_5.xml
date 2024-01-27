@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE discografica [
+<!ELEMENT discografica (cd)>
+<!ELEMENT cd (canciones, fecha)>
+<!ATTLIST cd tituloAlbum CDATA #REQUIRED>
+<!ELEMENT fecha (#PCDATA)>
+<!ATTLIST fecha 
+    dia CDATA #REQUIRED
+    mes CDATA #REQUIRED
+    anio CDATA #REQUIRED
+>
+<!ELEMENT canciones (cancion)>
+<!ELEMENT cancion (tituloCancion, compositores, productores, sello, artista)>
+<!ATTLIST cancion 
+    duracion CDATA #REQUIRED
+    anio CDATA #REQUIRED
+>
+<!ELEMENT tituloCancion (#PCDATA)>
+<!ELEMENT compositores (compositor)>
+<!ELEMENT compositor (nombreCompositor, apellidosCompositor)>
+<!ELEMENT nombreCompositor (#PCDATA)>
+<!ELEMENT apellidosCompositor (#PCDATA)>
+<!ELEMENT productores (productor)>
+<!ELEMENT productor (nombreProductor, apellidosProductor)>
+<!ELEMENT nombreProductor (#PCDATA)>
+<!ELEMENT apellidosProductor (#PCDATA)>
+<!ELEMENT sello (#PCDATA)>
+<!ELEMENT artista (#PCDATA)>
+]>
+
+<discografica>
+    <cd tituloAlbum="">
+        <canciones>
+            <cancion duracion="4:47" anio="2008">
+                <tituloCancion>Give it 2 me</tituloCancion>
+                <compositores>
+                    <compositor>
+                        <nombreCompositor>Pharrell</nombreCompositor>
+                        <apellidosCompositor>Williams</apellidosCompositor>
+                    </compositor>
+                </compositores>
+                <productores>
+                    <productor>
+                        <nombreProductor>Pharrell</nombreProductor>
+                        <apellidosProductor>Williams</apellidosProductor>
+                    </productor>
+                </productores>
+                <sello>Warner Bros.Records</sello>
+                <artista>Madonna</artista>
+            </cancion>
+        </canciones>
+        <fecha dia="" mes="" anio=""></fecha>
+    </cd>
+</discografica>

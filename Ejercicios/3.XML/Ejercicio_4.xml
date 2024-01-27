@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE comunidad [
+<!ELEMENT comunidad (propietario)>
+<!ELEMENT propietario (codigoVecino, nombre, apellidos, portal, ccc, cargo)>
+<!ELEMENT codigoVecino (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT portal (#PCDATA)>
+<!ATTLIST portal 
+    piso    CDATA 
+    letra   CDATA
+>
+<!ELEMENT ccc (#PCDATA)>
+<!ELEMENT cargo EMPTY>
+<!ATTLIST cargo puesto(presidente|vicepresidente|secretario|vocal)>
+]>
+
+<comunidad>
+    <propietario>
+        <nombre>Alejandro</nombre>
+        <apellidos>Franco Fernandez</apellidos>
+        <portal piso="4" letra="B">34</portal>
+        <ccc>15746134578671345</ccc>
+        <cargo puesto="presidente"></cargo>
+    </propietario>
+
+    <propietario>
+        <nombre>Paco</nombre>
+        <apellidos>De Lucía</apellidos>
+        <portal piso="2" letra="A">34</portal>
+        <ccc>15172399594671345</ccc>
+        <cargo puesto="vicepresidente"></cargo>
+    </propietario>
+
+    <propietario>
+        <nombre>Lisandro</nombre>
+        <apellidos>Paredes</apellidos>
+        <portal piso="7" letra="D">34</portal>
+        <ccc>821428349141411925</ccc>
+        <cargo puesto="vocal"></cargo>
+    </propietario>
+</comunidad>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE songs [
+<!ELEMENT songs (song)>
+<!ELEMENT song (title, composers+, producers+, publisher, artists+)>
+<!ATTLIST song
+    length CDATA #REQUIRED
+    anio CDATA #REQUIRED
+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT composers (composer)>
+<!ELEMENT composer (nombreComposer, apellidosComposer)>
+<!ELEMENT nombreComposer (#PCDATA)>
+<!ELEMENT apellidosComposer (#PCDATA)>
+<!ELEMENT producers (producer)>
+<!ELEMENT producer (nombreProducer, apellidosProducer)>
+<!ELEMENT nombreProducer (#PCDATA)>
+<!ELEMENT apellidosProducer (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT artists (artist)>
+<!ELEMENT artist (#PCDATA)>
+]>
+
+<songs>
+    <song length="6:20" anio="1978">
+        <title>Hot Cop</title>
+        <composers>
+            <composer>
+                <nombreComposer>Henry</nombreComposer>
+                <apellidosComposer>Beolo</apellidosComposer>
+            </composer>
+        </composers>
+        <producers>
+            <producer>
+                <nombreProducer>Jacques</nombreProducer>
+                <apellidosProducer>Morali</apellidosProducer>
+            </producer>
+        </producers>
+        <publisher>PolyGram</publisher>
+        <artists>
+            <artist>Village People</artist>
+        </artists>
+    </song>
+</songs>

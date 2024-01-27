@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<BDlibro>
+    <libro>
+        <titulo>Formacion y orientacion laboral</titulo>
+        <autor>Maria Eugenia Caldas Blanco</autor>
+        <editorial>Editex</editorial>
+        <fechaPublicacion>2022</fechaPublicacion>
+        <isbn>8364290347013</isbn>
+    </libro>
+
+    <libro>
+        <titulo>Fahrenheit 451</titulo>
+        <autor>Ray Bradbury</autor>
+        <editorial>Debolsillo</editorial>
+        <fechaPublicacion>2021</fechaPublicacion>
+        <isbn>9788466345408</isbn>
+    </libro>
+
+    <libro>
+        <titulo>El enigma del tiempo</titulo>
+        <autor>Erik Puebla Montero</autor>
+        <editorial>Donbuk</editorial>
+        <fechaPublicacion>2019</fechaPublicacion>
+        <isbn>9788417503499</isbn>
+    </libro>
+</BDlibro>
+

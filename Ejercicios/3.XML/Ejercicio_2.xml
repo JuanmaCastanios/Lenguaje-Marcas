@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Personas>
+    <persona>
+        <nombre>Jonh Smith</nombre>
+        <nacimiento dia="21" mes="Enero" anio="1969"></nacimiento>
+        <direcciones>
+            <direccion>
+                <calle>Avenida Universidad,30</calle>
+                <poblacion>Leganés</poblacion>
+                <provincia>Madrid</provincia>
+                <cpostal>28911</cpostal>
+            </direccion>
+        </direcciones>
+        <varon>
+            <hombre></hombre>
+            <mujer></mujer>
+        </varon>
+    </persona>
+</Personas>
