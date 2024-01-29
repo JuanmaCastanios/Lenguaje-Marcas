@@ -1,0 +1,22 @@
+<!DOCTYPE personas [
+<!ELEMENT personas (#PCDATA)>
+<!ELEMENT persona (nombre, apellido, dni, fechaNacimiento, direccion?, telefono, email)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ATTLIST apellidos 
+    apellido1 CDATA #REQUIRED
+    apellido2 CDATA #REQUIRED
+>
+<!ELEMENT dni (#PCDATA)>
+<!ATTLIST dni
+    numero CDATA #REQUIRED
+    letra CDATA #REQUIRED    
+>
+<!ELEMENT fechaNacimiento (#PCDATA)>
+<!ATTLIST fechaNacimiento
+    dia CDATA #REQUIRED
+    mes CDATA #REQUIRED
+    año CDATA #REQUIRED
+>
+<!ELEMENT element-name (#PCDATA)>
+]>
