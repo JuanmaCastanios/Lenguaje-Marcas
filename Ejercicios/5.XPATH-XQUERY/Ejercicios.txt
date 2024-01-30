@@ -1,0 +1,4 @@
+1. //produc/concat("Producto: ", denominacion, ", Precio: ", precio, " €")
+2. //produc[contains(denominacion, "Placa Base")]
+3. //produc[cod_zona = 20 and precio > 60]
+4. //produc[contains(denominacion, "Memoria") and cod_zona = 10]
