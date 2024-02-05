@@ -1,3 +1,5 @@
+Ejercicio 1
+
 1. //produc/concat("Producto: ", denominacion, ", Precio: ", precio, " €")
 
 2. //produc[contains(denominacion, "Placa Base")]
@@ -17,3 +19,28 @@
 9. //produc[precio = min(//produc[cod_zona = 20]/precio)]
 
 10. //produc[precio = max(//produc[cod_zona = 10]/precio)]
+-------------------------------------------------------------------------------
+
+Ejercicio 2
+
+1. //cuenta[@tipo = "AHORRO"]
+
+2. //sucursal/concat("La sucursal ", @codigo, " tienen de tipo AHORRO ", count(cuenta[@tipo = "AHORRO"]), " cuentas")
+
+3. //sucursal[@codigo = "SUC3"]/cuenta[@tipo = "PENSIONES"]
+
+4. //sucursal/concat("La sucursal ",@codigo, " tiene como director a ", director, " y el total del saldo haber es ", sum(cuenta/saldohaber))
+
+5.
+
+6.
+
+7.
+
+8.
+
+9.
+
+10.
+
+11.
