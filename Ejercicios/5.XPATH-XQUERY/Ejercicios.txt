@@ -1,4 +1,19 @@
 1. //produc/concat("Producto: ", denominacion, ", Precio: ", precio, " €")
+
 2. //produc[contains(denominacion, "Placa Base")]
+
 3. //produc[cod_zona = 20 and precio > 60]
-4. //produc[contains(denominacion, "Memoria") and cod_zona = 10]
+
+4. count(//produc[contains(denominacion, "Memoria") and cod_zona = 10])
+
+5. avg(//produc[contains(denominacion, "Micro")]/precio)
+
+6. //produc[number(stock_minimo) > number(stock_actual)]
+
+7. //produc[number(stock_minimo) > number(stock_actual) and cod_zona = 40]/concat("Producto: ", denominacion, ", Precio: ", precio)
+
+8. //produc[precio = max(//precio)]
+
+9. //produc[precio = min(//produc[cod_zona = 20]/precio)]
+
+10. //produc[precio = max(//produc[cod_zona = 10]/precio)]

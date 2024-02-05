@@ -1,0 +1,6 @@
+1.Cuántas facturas se han realizado
+count(//factura)
+
+2.Cual es la media de los descuentos de cada factura
+avg(//producto/@descuento)
+
