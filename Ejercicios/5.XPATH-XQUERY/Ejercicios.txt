@@ -25,22 +25,25 @@ Ejercicio 2
 
 1. //cuenta[@tipo = "AHORRO"]
 
-2. //sucursal/concat("La sucursal ", @codigo, " tienen de tipo AHORRO ", count(cuenta[@tipo = "AHORRO"]), " cuentas")
+2. //sucursal/concat("La sucursal ", @codigo, " tiene de tipo AHORRO ", count(cuenta[@tipo = "AHORRO"]), " cuentas")
 
 3. //sucursal[@codigo = "SUC3"]/cuenta[@tipo = "PENSIONES"]
 
 4. //sucursal/concat("La sucursal ",@codigo, " tiene como director a ", director, " y el total del saldo haber es ", sum(cuenta/saldohaber))
 
-5.
+5. //sucursal[count(cuenta) > 3]
 
-6.
+6. //sucursal[count(cuenta[@tipo = "AHORRO"]) > 3]
 
-7.
+7. //sucursal[count(cuenta) > 3]/concat("Director: ", director, ", Población: ", poblacion)
 
-8.
+8. concat("Número de sucursales: ", count(//sucursal[poblacion = "Madrid"]))
 
-9.
+9. //sucursal/concat("La sucursal", @codigo, " tiene un total de aportaciones de cuentas pensiones ", sum(cuenta[@tipo = "PENSIONES"]/aportacion))
 
-10.
+10. //cuenta[saldohaber > 10000]/concat("La cuenta ", nombre, " con numero ", numero, "tiene un saldo haber de ", saldohaber)
 
-11.
+11. //sucursal[count(cuenta[@tipo = "AHORRO"]) > 3]/concat("La sucursal ", @codigo, " tiene un saldo haber de ", sum(cuenta/saldohaber))
+-----------------------------------------------------------------
+
+Ejercicio 3
