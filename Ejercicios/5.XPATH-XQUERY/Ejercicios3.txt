@@ -1,0 +1,37 @@
+1. for $productos in distinct-values(//cod_zona)
+let $num_productos := count(//produc[cod_zona = $productos])
+return concat($productos, ': ', $num_productos)
+
+2. for $productos in //produc
+order by $productos/cod_zona
+return concat('<zona' ,$productos/cod_zona, '>', $productos/denominacion, '</zona',$productos/cod_zona, '>')
+
+3. for $productos in distinct-values(//cod_zona)
+let $productocaro := max(//produc[cod_zona = $productos]/precio)
+let $producto:= //produc[precio = $productocaro]/denominacion
+return concat('Zona: ',$productos, " - ", $productocaro, ' - ', $producto)
+
+4. 
+
+5. for $sucursales in //sucursal
+let $ahorro:= count($sucursales/cuenta[@tipo = 'AHORRO']/@tipo)
+let $pension:= count($sucursales/cuenta[@tipo = 'PENSIONES']/@tipo)
+return concat('Sucursal: ', $sucursales/@codigo, ', Ahorro: ', $ahorro, ', Pension: ', $pension)
+
+6. for $sucursales in //sucursal
+let $debe:= sum($sucursales/cuenta/saldodebe)
+let $haber:= sum($sucursales/cuenta/saldohaber)
+return concat('Sucursal: ', $sucursales/@codigo, ', Director: ', $sucursales/director, ', Pension: ', $sucursales/poblacion, ', Saldo Debe: ', $debe, ', Saldo Haber: ', $haber )
+
+7. for $sucursales in //sucursal
+where count($sucursales/cuenta) > 3
+return concat('Sucursal: ', $sucursales/@codigo, ', Director: ', $sucursales/director, ', Pension: ', $sucursales/poblacion )
+
+8. for $sucursales in //sucursal
+let $debe:= max(//sucursal[@codigo = $sucursales/@codigo]/cuenta/saldodebe)
+return concat('Sucursal: ', $sucursales/@codigo, ', Saldo Debe: ', $debe)
+
+9. for $cuenta in //cuenta
+let $maxpension:= max(//cuenta[@tipo = 'PENSIONES']/aportacion)
+where $cuenta/aportacion = $maxpension
+return concat('Sucursal: ', $cuenta/numero, ', Pension: ', $maxpension)
