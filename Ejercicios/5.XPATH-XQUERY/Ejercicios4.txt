@@ -1,0 +1,12 @@
+1. for $productos in //produc
+let $zonas := //zona[$productos/cod_zona = cod_zona]/nombre
+order by $zonas
+return concat('Nombre: ', $productos/denominacion, ', Precio: ', $productos/precio, ', Zona: ', $zonas)
+
+2. for $zonas in //zona
+let $numProductos:= count(//produc[cod_zona = $zonas/cod_zona])
+return concat('Nombre: ', $zonas/nombre, ', Numero de productos: ', $numProductos)
+
+3. for $zonas in //zona
+let $prodMenosStock:= //produc[cod_zona = $zonas/cod_zona and stock_actual = min(//produc/stock_actual)]/denominacion
+return concat('Nombre: ', $zonas/nombre, ', Codigo Zona: ', $zonas/cod_zona, ', Producto con menos Stock: ', $prodMenosStock)
