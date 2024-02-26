@@ -11,11 +11,18 @@ let $productocaro := max(//produc[cod_zona = $productos]/precio)
 let $producto:= //produc[precio = $productocaro]/denominacion
 return concat('Zona: ',$productos, " - ", $productocaro, ' - ', $producto)
 
-4. 
+4. for $den in /productos/produc/denominacion
+return if(starts-with($den, 'Placa Base'))
+	then <placa>{data($den)}</placa>
+	else if(starts-with($den, 'Memoria'))
+	then <memoria>{data($den)}</memoria>
+	else if(starts-with($den,'Micro'))
+  	then <micro>{data($den)}</micro>
+  	else <otros>{data($den)}</otros>
 
 5. for $sucursales in //sucursal
-let $ahorro:= count($sucursales/cuenta[@tipo = 'AHORRO']/@tipo)
-let $pension:= count($sucursales/cuenta[@tipo = 'PENSIONES']/@tipo)
+let $ahorro:= count($sucursales/cuenta[@tipo = 'AHORRO'])
+let $pension:= count($sucursales/cuenta[@tipo = 'PENSIONES'])
 return concat('Sucursal: ', $sucursales/@codigo, ', Ahorro: ', $ahorro, ', Pension: ', $pension)
 
 6. for $sucursales in //sucursal
@@ -25,7 +32,7 @@ return concat('Sucursal: ', $sucursales/@codigo, ', Director: ', $sucursales/dir
 
 7. for $sucursales in //sucursal
 where count($sucursales/cuenta) > 3
-return concat('Sucursal: ', $sucursales/@codigo, ', Director: ', $sucursales/director, ', Pension: ', $sucursales/poblacion )
+return concat('Sucursal: ', $sucursales/@codigo, ', Director: ', $sucursales/director, ', Poblacion: ', $sucursales/poblacion )
 
 8. for $sucursales in //sucursal
 let $debe:= max(//sucursal[@codigo = $sucursales/@codigo]/cuenta/saldodebe)
@@ -34,4 +41,4 @@ return concat('Sucursal: ', $sucursales/@codigo, ', Saldo Debe: ', $debe)
 9. for $cuenta in //cuenta
 let $maxpension:= max(//cuenta[@tipo = 'PENSIONES']/aportacion)
 where $cuenta/aportacion = $maxpension
-return concat('Sucursal: ', $cuenta/numero, ', Pension: ', $maxpension)
+return concat('Cuenta: ', $cuenta/numero, ', Aportacion: ', $maxpension)
