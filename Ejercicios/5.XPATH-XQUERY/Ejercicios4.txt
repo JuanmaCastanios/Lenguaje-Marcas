@@ -8,5 +8,5 @@ let $numProductos:= count(//produc[cod_zona = $zonas/cod_zona])
 return concat('Nombre: ', $zonas/nombre, ', Numero de productos: ', $numProductos)
 
 3. for $zonas in //zona
-let $prodMenosStock:= //produc[cod_zona = $zonas/cod_zona and stock_actual = min(//produc/stock_actual)]/denominacion
+let $prodMenosStock:= //produc[cod_zona = $zonas/cod_zona and stock_actual = min(//produc[cod_zona = $zonas/cod_zona]/stock_actual)]/denominacion
 return concat('Nombre: ', $zonas/nombre, ', Codigo Zona: ', $zonas/cod_zona, ', Producto con menos Stock: ', $prodMenosStock)
