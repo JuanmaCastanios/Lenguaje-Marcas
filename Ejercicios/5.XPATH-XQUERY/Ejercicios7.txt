@@ -1,0 +1,18 @@
+1. for $dep in /departamentos/DEP_ROW[DNOMBRE="INVESTIGACION"]/DEPT_NO
+	for $sal in /EMPLEADOS/EMP_ROW[DEPT_NO=$dep]/SALARIO
+	let $media:=avg(/EMPLEADOS/EMP_ROW[DEPT_NO=$dep]/SALARIO)
+	let $nuevoSal:=$sal + $media*0.10
+	return update value $sal with $nuevoSal
+
+2. update rename //EMP_ROW/OFICIO as 'PUESTO'
+
+3. for $dep in /departamentos/DEP_ROW/DEPT_NO
+let $emps:=count(/EMPLEADOS/EMP_ROW[DEPT_NO=$dep])
+return update insert <NUMEMPLE>{$emps}</NUMEMPLE> into /departamentos/DEP_ROW[DEPT_NO=$dep]
+
+4. for $dep in /departamentos/DEP_ROW/DEPT_NO
+let $maxSal:=max(/EMPLEADOS/EMP_ROW[DEPT_NO=$dep]/SALARIO)
+return update delete /EMPLEADOS/EMP_ROW[SALARIO=$maxSal and DEPT_NO=$dep]
+
+
+5. update value //EMP_ROW[OFICIO="VENDEDOR"]/OFICIO with 'COMERCIAL'
