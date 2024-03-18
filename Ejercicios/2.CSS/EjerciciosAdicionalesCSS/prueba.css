@@ -1,0 +1,13 @@
+#fondo{
+    background-color: aqua;
+}
+
+#texto{
+    top: 0px;
+    margin-left: 15%;
+
+}
+
+#menu{
+    position: absolute;
+}

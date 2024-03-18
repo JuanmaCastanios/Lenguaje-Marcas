@@ -24,4 +24,15 @@ with <EMP_ROW>
 </DEP_ROW>
 into //departamentos
 
-4. 
+4. for $emp in //EMP_ROW[DEPT_NO=20]
+let $sal := $emp/SALARIO
+return 
+update value $sal with $sal + 100
+
+5. update rename //EMP_ROW as 'filadepar'
+
+6. update delete //EMP_ROW[DEPT_NO = //DEPT_ROW[LOC = 'Valladolid']/DEPT_NO]
+
+7. update insert
+<MEDIA_EMP>avg(//EMP_ROW[DEPT_NO = //DEPT_ROW/DEPT_NO])</MEDIA_EMP>
+into //DEPT_ROW
