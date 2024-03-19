@@ -1,0 +1,27 @@
+1. for $depart in //DEP_ROW
+let $mediaDepart := avg(//EMP_ROW[DEPT_NO = $depart/DEPT_NO]/SALARIO)
+return update delete //EMP_ROW[SALARIO > $mediaDepart]
+
+2. 
+
+3. 
+
+4. for $dept in //DEP_ROW[LOC != 'BARCELONA' and LOC != 'BILBAO']
+let $emple:= //EMP_ROW[DEPT_NO=$dept/DEPT_NO]
+let $sal:= $emple/SALARIO
+for $emp in $emple
+return update value $emp/SALARIO with $emp/SALARIO + 100
+
+5. for $oficio in distinct-values(//OFICIO)
+for $maxSal in max(//EMP_ROW[OFICIO = $oficio]/SALARIO)
+return //EMP_ROW[OFICIO = $oficio and SALARIO = $maxSal] 
+
+6. update replace //SALARIO as 'SUELDO'
+
+7. for $dept in //DEP_ROW[LOC = 'VALLADOLID' and LOC = 'BARCELONA' and LOC = 'MADRID']
+let $emple:= //EMP_ROW[DEPT_NO = $dept/DEPT_NO]
+let $media:= avg($emple[OFICIO = 'DIRECTOR']/SALARIO)
+for $emp in $emple
+return update value $emp/SALARIO with $emp/SALARIO * $media
+
+8. 
