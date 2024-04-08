@@ -1,0 +1,84 @@
+1. Incrementa el precio de todos los productos de alimentación o de ocio un 10%.
+for $prod in //producto[seccion = 'alimentación' or seccion = 'ocio']
+return update replace $prod/precio with $prod/precio * 0.1
+
+2. Queremos mostrar en formato tabla HTML, la sección de cada producto y la descripción, de manera que se muestren agrupadas las diferente secciones, es decir, primero las de deporte, las siguientes filas de la tabla ropa, etc.... Ej. formato de salida:
+
+<html>
+    <body>
+        <table>
+            <tr>
+                <td>deporte</td>
+                <td>Primis in faucibus. Ut id nulla ac sapien suscipit tristique ac volutpat risus.Phasellus vitae ligula commodo, dictum lorem sit amet, imperdiet ex. Etiam cursus porttitor tincidunt. Vestibulum ante ipsumprimis in faucibus orci luctus et ultrices posuere cubilia Curae</td>
+            </tr>
+
+.....................
+
+        </table>
+    </body>
+</html>
+
+
+
+3. Para todas las ventas, añade un nuevo nodo que será con nombre id_venta y como valor, la concatenación del id_producto e id_comprador separados por un guión. Ejemplo:
+
+    <venta>
+        <id_producto>1</id_producto>
+        <id_comprador>1</id_comprador>
+        <cantidad>75</cantidad>
+        <precio_unidad>42</precio_unidad>
+    </venta>
+
+Surgirá:
+
+    <venta>
+
+        <id_venta>1-1</id_venta>
+
+        <id_producto>1</id_producto>
+        <id_comprador>1</id_comprador>
+        <cantidad>75</cantidad>
+        <precio_unidad>42</precio_unidad>
+    </venta>
+
+for $ven in //venta
+return update insert <id_venta>{concat($ven/id_producto, ' - ', $ven/id_comprador)}</id_venta> into $ven
+
+4. ¿Cuantos hombres y mujeres hay por cada país? Ejemplo de formato de salida:
+
+United States-MALE-333
+United States-FEMALE-444
+Canada-MALE-32
+Canada-FEMALE-45
+
+for $pais in distinct-values(//comprador/pais)
+for $gen in distinct-values(//comprador/@genero)
+let $personas:= count(//comprador[@genero = $gen and pais = $pais])
+return concat($pais, " - ", $gen, " - ", $personas)
+
+5. Cambia el nombre del nodo de precio_unidad en todo el fichero de ventas, por pvp y la cantidad aparecerá en € , es decir, a la cantidad numérica existente debes añadirle el símbolo €.
+
+for $ven in //venta
+return (update value $ven/precio_unidad with concat($ven/precio_unidad, "€"),
+	update rename $ven/precio_unidad as "pvp")
+
+6. Queremos saber cual ha sido el gasto total (sabiendo que el gasto individual de cada compra es cantidad * precio_unidad) por cada uno de los compradores que han comprado, es decir, la suma de todas las compras de cada uno de los compradores.
+
+Formato de salida:
+
+<venta>
+    <id_comprador>1</id_comprador>
+    <gasto>xxxx</gasto>
+</venta>
+<venta>
+    <id_comprador>2</id_comprador>
+    <gasto>xxxx</gasto>
+</venta>
+
+
+
+7.- Crea dentro de las ventas, por cada venta, un nuevo campo que tenga el total de la factura (surge de multiplicar cantidad por el precio_unidad de cada venta).
+
+
+
+
