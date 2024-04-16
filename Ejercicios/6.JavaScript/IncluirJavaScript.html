@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onload = function(){
+            
+            document.getElementById("btn_saludo2").addEventListener("click", function(){
+                nombre = document.getElementById("txt_nombre").value
+                pais = document.getElementById("slc_paises").value
+                alert("Hola Mundo " + nombre + " de " + pais)
+            })
+        }
+
+        function saludar(){
+            alert("Hola Mundo")
+        }
+        
+    </script>
+</head>
+<body>
+    
+    
+
+    <input type = "text" id = "txt_nombre">
+    <select id="slc_paises">
+        <option>Peru</option>
+        <option>Chile</option>
+        <option>Argentina</option>
+        <option>Bolivia</option>
+        <option>Ecuador</option>
+    </select>
+
+    <button onclick="alert('Hola Mundo')">Haz Click</button>
+    <br>
+    <button id="btn_saludo2">Saludo2</button>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        function cambiarColor(){
+            color = document.getElementById("slc_color").value
+            document.body.style.backgroundColor = color
+        }
+    </script>
+</head>
+<body>
+    
+<select id="slc_color" onchange="cambiarColor()">
+    <option value="#0000FF">Azul</option>
+    <option value="#FF0000">Rojo</option>
+    <option value="#000000">Negro</option>
+</select>
+
+</body>
+</html>
