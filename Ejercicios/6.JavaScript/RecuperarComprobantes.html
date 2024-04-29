@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function (){
+            parrafos = document.getElementsByTagName("p")
+            for (let index = 0; index < parrafos.length; index++) {
+                parrafos[index].style.color = "red";
+                parrafos[index].style.backgroundColor = "yellow";
+                parrafos[index].innerHTML = "Parrafo " + (index + 1);
+                parrafos[index].innerHTML = "<a href = '#" + index + "'>" + (index + 1) + "</a>";
+            }
+            document.getElementById("boton").addEventListener("click", devolverCampo)
+        }
+
+        function devolverCampo() {
+            campos = document.getElementsByTagName("input");
+            for (let index = 0; index < campos.length; index++) {
+                console.log(campos[index].value);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem veritatis laborum, neque dicta esse cumque itaque atque aut eveniet quidem?</p>
+    <p>Dicta voluptas quasi dolorem? Atque dolor mollitia sequi molestiae cum excepturi molestias ipsam? Saepe deleniti, suscipit sapiente natus repudiandae impedit!</p>
+    <p>Et nisi aspernatur ducimus reiciendis libero temporibus, quas quidem earum ullam nesciunt ratione modi magni molestiae numquam quae! Illo, recusandae!</p>
+    <p>Praesentium aliquid sequi laboriosam earum fugiat hic aperiam harum iste? Quos quaerat at nihil qui blanditiis fuga quibusdam amet incidunt?</p>
+    <p>Nisi, nesciunt. Autem exercitationem quasi fugiat necessitatibus quia perspiciatis eum, tempora doloremque delectus provident, possimus, dolor molestias corporis quo eveniet.</p>
+    <p>Debitis recusandae necessitatibus velit enim! Rem soluta ea voluptatum eius ullam nam molestias fugiat, nisi modi itaque eligendi excepturi! Animi.</p>
+    <p>Voluptate aut et error facilis id voluptates consectetur, possimus quibusdam laborum commodi mollitia delectus assumenda odio rerum sunt culpa beatae?</p>
+    <p>Quibusdam esse quaerat laboriosam deserunt! Officiis optio voluptates, nesciunt dolores consectetur culpa suscipit porro architecto? Laudantium cumque consequatur commodi illo.</p>
+    <p>Mollitia repudiandae quibusdam dignissimos soluta itaque error impedit temporibus similique molestias ea cum ipsum deleniti, eveniet sunt, ut praesentium asperiores.</p>
+    <p>Dolorum provident aspernatur nulla explicabo reiciendis! Eum temporibus et, officiis expedita dolorem sapiente? Officia eius odio aspernatur corrupti ipsa doloremque.</p>
+
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="submit" id="boton">
+</body>
+</html>
