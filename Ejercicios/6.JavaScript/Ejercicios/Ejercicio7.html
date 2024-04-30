@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function contarCaracteres(){
+            texto = document.getElementById("texto").value;
+            caracteres = (100 - texto.length);
+            titulo = "Puedes escribir hasta " + caracteres + " caracteres adicionales"
+            document.getElementById(titulo).innerHTML = titulo;
+        }
+    </script>
+</head>
+<body>
+    <h4 id="titulo">Puedes escribir hasta 100 caracteres adicionales</h4>
+    <textarea  id="texto" cols="30" rows="10" style="resize: none;" onfocus="contarCaracteres()"></textarea>
+</body>
+</html>

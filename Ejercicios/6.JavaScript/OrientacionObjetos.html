@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script>
+        function Persona(nombre, apellido, edad){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.edad = edad;
+
+            this.incrementarEdad = function incrementarEdad(){
+                this.edad++;
+            }
+
+            this.saludar = function saludar(nombre){
+                document.write("Hola " + nombre + ", soy " + this.nombre + "<br>")
+            }
+
+        }
+        pedro = new Persona("Pedro", "Perez", 25);
+        document.write(pedro.nombre + " " + pedro.apellido + " " + pedro.edad + "<br>");
+        pedro.incrementarEdad();
+        document.write(pedro.nombre + " " + pedro.apellido + " " + pedro.edad + "<br>");
+        
+        xuan = new Persona("Xuan", "Perez", 212);
+        pedro.saludar(xuan.nombre);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

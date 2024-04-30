@@ -26,16 +26,16 @@
         }
 
         function activarColor(celda) {
-            if (!celda.classList.contains("visited")) {
+            if (!celda.classList.contains("visitado")) {
                 celda.style.backgroundColor = "yellow";
-            }
+            }   
         }       
 
         function desactivarColor(celda) {
-            if (!celda.classList.contains("visited")) {
+            if (!celda.classList.contains("visitado")) {
                 celda.style.backgroundColor = "green";
             }
-            celda.classList.add("visited");
+            celda.classList.add("visitado");
         }
     </script>
 </head>
