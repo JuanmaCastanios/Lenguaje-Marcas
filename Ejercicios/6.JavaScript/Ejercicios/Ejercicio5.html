@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostrarTexto() {
+            var seleccion = document.getElementById("opciones").value;
+            var texto = document.getElementById("texto");
+            texto.innerHTML = "<h1>" + seleccion + "</h1>";
+        }   
+    </script>
+</head>
+<body>
+    <select id="opciones" onchange="mostrarTexto()">
+        <option value="Texto1">Texto1</option>
+        <option value="Texto2">Texto2</option>
+        <option value="Texto3">Texto3</option>
+        <option value="Texto4">Texto4</option>
+    </select>
+    <h1 id="texto"></h1>
+</body>
+</html>

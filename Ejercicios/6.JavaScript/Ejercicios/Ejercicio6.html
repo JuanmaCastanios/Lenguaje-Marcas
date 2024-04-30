@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function generarTabla() {
+            filas = parseInt(document.getElementById("filas").value);
+            columnas = parseInt(document.getElementById("columnas").value);
+            tablaHTML = "<table border = '1'>";
+            for (var i = 0; i < filas; i++) {
+                tablaHTML += "<tr>";
+                for (var j = 0; j < columnas; j++) {
+                    tablaHTML += "<td onmouseenter='activarColor(this)' onmouseleave='desactivarColor(this)'></td>";
+                }
+                tablaHTML += "</tr>";
+            }
+            tablaHTML += "</table>";
+            document.getElementById("tablaContainer").innerHTML = tablaHTML;
+        }
+
+        function activarColor(celda) {
+            if (!celda.classList.contains("visited")) {
+                celda.style.backgroundColor = "yellow";
+            }
+        }       
+
+        function desactivarColor(celda) {
+            if (!celda.classList.contains("visited")) {
+                celda.style.backgroundColor = "green";
+            }
+            celda.classList.add("visited");
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="filas">
+    <input type="number" id="columnas">
+    <button onclick="generarTabla()">Generar tabla</button>
+    
+    <div id="tablaContainer"></div>
+</body>
+</html>
