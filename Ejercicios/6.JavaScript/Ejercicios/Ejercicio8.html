@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Respuesta(nombre, apellido, correo){
+            this.nombre = nombre
+            this.apellido = apellido
+            this.correo = correo
+        }
+        function enviarFormulario(){
+            resp = new Respuesta(document.getElementById("nombre").value, document.getElementById("apellido").value, document.getElementById("correo").value)
+            mensaje = "Mensaje enviado correctamente con los siguientes datos:" + resp.nombre + " , " + resp.apellido + " y " + resp.correo;
+            document.getElementById("mensaje").innerHTML = mensaje
+        }
+    </script>
+</head>
+<body>
+    <form id="formulario" onsubmit="enviarFormulario()">
+        <label>Nombre:</label><br>
+        <input type="text" id="nombre"><br>
+        <label>Apellido:</label><br>
+        <input type="text" id="apellido"><br>
+        <label>Correo electrónico:</label><br>
+        <input type="email" id="correo"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="mensaje"></div>
+</body>
+</html>

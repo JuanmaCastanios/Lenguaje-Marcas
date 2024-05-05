@@ -9,12 +9,12 @@
             texto = document.getElementById("texto").value;
             caracteres = (100 - texto.length);
             titulo = "Puedes escribir hasta " + caracteres + " caracteres adicionales"
-            document.getElementById(titulo).innerHTML = titulo;
+            document.getElementById("titulo").innerHTML = titulo;
         }
     </script>
 </head>
 <body>
     <h4 id="titulo">Puedes escribir hasta 100 caracteres adicionales</h4>
-    <textarea  id="texto" cols="30" rows="10" style="resize: none;" onfocus="contarCaracteres()"></textarea>
+    <textarea  id="texto" cols="30" rows="10" style="resize: none;" oninput="contarCaracteres()"></textarea>
 </body>
 </html>
