@@ -7,15 +7,15 @@
     <script>
         window.onload = function (){
             function Punto(x, y){
-                this.x = x
-                this.y = y
+                this.x = parseInt(x)
+                this.y = parseInt(y)
 
                 this.sumarDistancia = function sumarDistancia(distancia){
-                    this.x += distancia
-                    this.y += distancia
+                    this.x = this.x + parseInt(distancia)
+                    this.y = this.y + parseInt(distancia)
                 }
                 this.mostrarPunto = function mostrarPunto(){
-                    mensaje = "<br>Punto = X: " + this.x + "Y: " + this.y
+                    mensaje = "<br>Punto = X: " + this.x + " Y: " + this.y
                     return mensaje
                 }
             }
