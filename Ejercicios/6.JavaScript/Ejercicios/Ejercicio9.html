@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function (){
+            casillas = document.getElementsByTagName("input");
+            for (let index = 0; index < casillas.length; index++) {
+                casillas[index].addEventListener("focus", function (){
+                    cambiarColor(this, "yellow");
+                });
+                casillas[index].addEventListener("blur", function (){
+                    cambiarColor(this, "white");
+                });  
+            }
+        }
+        function cambiarColor(casilla, color){
+            mensaje = "Los datos son:<br>"
+            casilla.style.backgroundColor = color;
+        }
+        function enviarDatos(){
+            campos = document.getElementsByTagName("input");
+            for (let i = 0; i < campos.length; i++) {
+                if(campos[i].type == "text"){
+                    mensaje += campos[i].value + "<br>"
+                } 
+            }
+            document.getElementById("mensaje").innerHTML = mensaje
+        }
+    </script>
+</head>
+<body>
+    <input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"><input type="text"> 
+    <input type="submit" value="Enviar" onclick="enviarDatos()">
+    <div id="mensaje"></div>
+</body>
+</html>

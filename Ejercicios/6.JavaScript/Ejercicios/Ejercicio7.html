@@ -6,10 +6,15 @@
     <title>Document</title>
     <script>
         function contarCaracteres(){
+            
             texto = document.getElementById("texto").value;
             caracteres = (100 - texto.length);
             titulo = "Puedes escribir hasta " + caracteres + " caracteres adicionales"
+            if(texto.value.length > 100){
+                texto.value = texto.value.substring(0,100)
+            }
             document.getElementById("titulo").innerHTML = titulo;
+            
         }
     </script>
 </head>

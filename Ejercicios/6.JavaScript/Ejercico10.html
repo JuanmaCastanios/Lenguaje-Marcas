@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function (){
+            function Punto(x, y){
+                this.x = x
+                this.y = y
+
+                this.sumarDistancia = function sumarDistancia(distancia){
+                    this.x += distancia
+                    this.y += distancia
+                }
+                this.mostrarPunto = function mostrarPunto(){
+                    mensaje = "<br>Punto = X: " + this.x + "Y: " + this.y
+                    return mensaje
+                }
+            }
+            document.getElementById("boton").addEventListener("click", () => {
+                punto = new Punto(document.getElementById("coordX").value, document.getElementById("coordY").value)        
+                punto.sumarDistancia(document.getElementById("dist").value)
+                document.getElementById("resultado").innerHTML = punto.mostrarPunto()
+            })
+        }
+    </script>
+</head>
+<body>
+    Coordenada X: <input type="number" id="coordX"> <br>
+    Coordenada Y: <input type="number" id="coordY"> <br>
+    Distancia: <input type="number" id="dist"> <br>
+    <input type="submit" value="Mover" id="boton">
+    <div id="resultado"></div>
+</body>
+</html>
