@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        array = []
+        sumaTotal = 0
+        for (let i = 0; i < 4; i++) {
+            num = prompt("Introduce un número: ")
+            array[i] = parseInt(num)
+            sumaTotal += parseInt(num)
+        }
+        document.getElementById("suma").innerHTML = "La suma total es " + sumaTotal 
+            
+    </script>
+</head>
+<body>
+    <div id="suma"></div>
+    <div id="mayores36"></div>
+    <div id="mayores50"></div>
+</body>
+</html>

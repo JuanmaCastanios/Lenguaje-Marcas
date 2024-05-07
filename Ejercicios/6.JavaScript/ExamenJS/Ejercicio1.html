@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () =>{
+            document.getElementById("generar").addEventListener("click", () =>{
+                numParrafos = document.getElementById("parrafos").value
+                texto = ""
+                for (let i = 0; i < numParrafos; i++) {
+                    texto += "<p>Es un parrrafo</p>"
+                }
+                document.getElementById("texto").innerHTML = texto
+            })
+
+            document.getElementById("cambiar").addEventListener("click", () =>{
+                document.getElementsByTagName("p");
+                document.getElementById
+                for (let i = 0; i < parrafos.length; i++) {
+                    parrafos[i].innerHTML = "<li>" + parrafos[i].value + "</li>"
+                }
+                texto += "</ol>"
+                document.getElementById("texto").innerHTML = texto
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="parrafos"> <br>
+    <input type="submit" value="Generar" id="generar">
+    <input type="submit" value="Cambiar" id="cambiar"> <br>
+    <div id="texto"></div>
+
+</body>
+</html>
