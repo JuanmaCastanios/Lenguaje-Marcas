@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        array = []
-        sumaTotal = 0
-        for (let i = 0; i < 4; i++) {
-            num = prompt("Introduce un número: ")
-            array[i] = parseInt(num)
-            sumaTotal += parseInt(num)
+        window.onload = () =>{
+            array = []
+            sumaTotal = 0
+            mayores50 = "Los valores mayores a 50: "
+            for (let i = 0; i < 4; i++) {
+                num = prompt("Introduce un número: ")
+                array[i] = parseInt(num)
+                sumaTotal += parseInt(num)
+                if(parseInt(num) > 50){
+                    mayores50 += num + ", "
+                }
+            }
+            document.getElementById("suma").innerHTML = "La suma total es " + sumaTotal
+            if(sumaTotal > 36){
+                document.getElementById("mayores36").innerHTML = "El valor acumulado de los elementos del vector son mayores a 36"
+            } else {
+                document.getElementById("mayores36").innerHTML = "El valor acumulado de los elementos del vector no son mayores a 36"
+            }
+            document.getElementById("mayores50").innerHTML = mayores50
         }
-        document.getElementById("suma").innerHTML = "La suma total es " + sumaTotal 
-            
     </script>
 </head>
 <body>

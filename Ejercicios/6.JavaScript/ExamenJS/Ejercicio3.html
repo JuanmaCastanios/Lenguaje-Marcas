@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+
+            texto = document.getElementsByClassName("textos")
+            for (let i = 0; i < texto.length; i++) {
+                texto[i].addEventListener("focus", function(){
+                    cambiarColorFondo(this, "red")
+                    cambiarColorLetra(this, "white")
+                })
+                texto[i].addEventListener("blur", function(){
+                    cambiarColorFondo(this, "white")
+                    cambiarColorLetra(this, "black")
+                })  
+            }
+
+            document.getElementById("botonEnviar").addEventListener("click", function(){
+                p = new Persona(document.getElementById("nombre").value,document.getElementById("edad").value,document.getElementById("notaMedia").value)
+                p.mostrarDatos()
+            })
+            
+             
+        }
+
+        function cambiarColorFondo(texto, color){
+            texto.style.backgroundColor = color
+        }
+
+        function cambiarColorLetra(texto, color){
+            texto.style.color = color
+        }
+        
+        function Persona (nombre, edad, notaMedia){
+            this.nombre = nombre
+            this.edad = edad
+            this.notaMedia = notaMedia
+
+            this.mostrarDatos = function mostrarDatos(){
+                alert("Nombre: " + nombre + "\nEdad: " + edad + "\nNota Media: " + notaMedia)
+            }
+        }
+    </script>
+</head>
+<body>
+    Nombre: <input class="textos" id="nombre" type="text"><br>
+    Edad: <input class="textos" id="edad" type="number"><br>
+    Nota Media: <input class="textos" id="notaMedia" type="number"><br>
+    <input type="submit" id="botonEnviar" value="Enviar">
+</body>
+</html>
