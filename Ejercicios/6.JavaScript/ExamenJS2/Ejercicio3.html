@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            for (let i = 1; i < 5; i++) {
+                for (let j = 1; j < 13; j++) {
+                    carta = "<img class='" + i +"' id='" + j + "' src='cartas/trasera.jpg'>"
+                    console.log(carta)
+                    document.getElementById("cuerpo").innerHTML += carta
+                    
+                }
+                
+            }
+
+            cartas = document.getElementsByClassName("carta")
+            for (let i = 0; i < texto.length; i++) {
+                cartas[i].addEventListener("focus", function(){
+                    cambiarDorso(this)
+                })
+                cartas[i].addEventListener("blur", function(){
+                    cambiarDorso
+                })  
+            }
+
+        }
+        function cambiarDorso(carta){
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="cuerpo"></div>
+</body>
+</html>
