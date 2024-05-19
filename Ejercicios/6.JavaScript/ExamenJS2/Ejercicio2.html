@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            botonRegistro = document.getElementById('botonRegistro');
+            botonLista = document.getElementById('botonLista');
+            nombre = document.getElementById('nombre').value;
+            edad = document.getElementById('edad').value;
+
+            botonRegistro.addEventListener('click', function () {
+
+                if (nombre === '') {
+                    alert('Por favor completa ambos campos.');
+                    return;
+                }
+
+                if (edad < 18) {
+                    alert('Los participantes deben tener al menos 18 años.');
+                    return;
+                }
+                alert('Inscripción exitosa');
+            });
+
+            botonLista.addEventListener('click', function () {
+                texto = ''
+                texto += '<li>Nombre: ' +  nombre + ', Edad: ' + edad + '</li>'
+                document.getElementById("lista").innerHTML = texto
+            });
+        }
+    </script>
 </head>
+
 <body>
-    
+    Nombre: <input type="text" id="nombre" required>
+    Edad: <input type="number" id="edad" required>
+    <input type="submit" id="botonRegistro" value="Inscribirse">
+    <input type="submit" id="botonLista" value="Listar Inscritos">
+    <h2>Lista de Participantes</h2>
+    <ul id="lista"></ul>
+
 </body>
+
 </html>

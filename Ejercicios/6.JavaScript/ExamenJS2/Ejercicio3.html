@@ -16,19 +16,22 @@
                 
             }
 
-            cartas = document.getElementsByClassName("carta")
-            for (let i = 0; i < texto.length; i++) {
-                cartas[i].addEventListener("focus", function(){
-                    cambiarDorso(this)
+            cartas = document.getElementsByTagName("img")
+            for (let z = 0; z < carta.length; z++) {
+                cartas[z].addEventListener("focus", function(){
+                    cambiarDelante(this)
                 })
-                cartas[i].addEventListener("blur", function(){
-                    cambiarDorso
+                cartas[z].addEventListener("blur", function(){
+                    cambiarDorso(this)
                 })  
             }
 
         }
-        function cambiarDorso(carta){
-            
+        function cambiarDelante(carta){
+            carta = "<img class='" + carta.class +"' id='" + carta.id + "' src='../cartas/" + carta.class+ "/" + carta.id + ".jpg>"
+        }
+        function cambiarDelante(carta){
+            carta = "<img class='" + carta.class +"' id='" + carta.id + "' src='cartas/trasera.jpg'>"
         }
     </script>
 </head>
