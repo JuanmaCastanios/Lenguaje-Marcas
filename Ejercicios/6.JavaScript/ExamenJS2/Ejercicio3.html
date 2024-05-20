@@ -8,31 +8,32 @@
         window.onload = ()=>{
             for (let i = 1; i < 5; i++) {
                 for (let j = 1; j < 13; j++) {
-                    carta = "<img class='" + i +"' id='" + j + "' src='cartas/trasera.jpg'>"
+                    carta = "<img src='cartas/trasera.jpg' class='" + i + "' id='" + j + "' >"
                     console.log(carta)
                     document.getElementById("cuerpo").innerHTML += carta
                     
                 }
-                
             }
 
             cartas = document.getElementsByTagName("img")
-            for (let z = 0; z < carta.length; z++) {
+            for (let z = 0; z < cartas.length; z++) {
                 cartas[z].addEventListener("focus", function(){
                     cambiarDelante(this)
                 })
                 cartas[z].addEventListener("blur", function(){
                     cambiarDorso(this)
                 })  
-            }
+            } 
+        }
 
-        }
         function cambiarDelante(carta){
-            carta = "<img class='" + carta.class +"' id='" + carta.id + "' src='../cartas/" + carta.class+ "/" + carta.id + ".jpg>"
+            carta.src = "cartas/" + carta.class + "/" + carta.id +".jpg"
+            
         }
-        function cambiarDelante(carta){
-            carta = "<img class='" + carta.class +"' id='" + carta.id + "' src='cartas/trasera.jpg'>"
+        function cambiarDorso(carta){
+            carta.src = "cartas/trasera.jpg"
         }
+
     </script>
 </head>
 <body>
