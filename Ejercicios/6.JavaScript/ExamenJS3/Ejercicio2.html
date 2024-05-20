@@ -20,13 +20,17 @@
             totalY += p.puntoY
             contenedor.push(p)
         }
-        function mostrarCoord(contenedor){
-            
+
+        for (let i = 0; i < contenedor.length; i++) {
+            document.getElementById("puntos").innerHTML += "<li>Punto " + (i + 1) + ": (" + contenedor[i].puntoX + ", " + contenedor[i].puntoY + ")</li>"
         }
+        document.getElementById("cuerpo").innerHTML += "Suma de X: " + totalX + "<br>"
+        document.getElementById("cuerpo").innerHTML += "Suma de Y: " + totalY + "<br>"
     }
 </script>
 <body>
-    <h1></h1>
+    <h1>Coordenadas</h1>
+    <ul id="puntos"></ul>
     <div id="cuerpo"></div>
 </body>
 </html>
