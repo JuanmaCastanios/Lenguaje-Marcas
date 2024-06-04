@@ -11,9 +11,11 @@
             this.puntoX = parseInt(puntoX)
             this.puntoY = parseInt(puntoY)
         }
+
         contenedor = []
         totalX = 0
         totalY = 0
+
         for (let i = 1; i <= 3; i++) {
             p = new Coordenada(prompt("Introduzca la X de la coordenada " + i),prompt("Introduzca la Y de la coordenada " + i))
             totalX += p.puntoX
@@ -24,6 +26,7 @@
         for (let i = 0; i < contenedor.length; i++) {
             document.getElementById("puntos").innerHTML += "<li>Punto " + (i + 1) + ": (" + contenedor[i].puntoX + ", " + contenedor[i].puntoY + ")</li>"
         }
+        
         document.getElementById("cuerpo").innerHTML += "Suma de X: " + totalX + "<br>"
         document.getElementById("cuerpo").innerHTML += "Suma de Y: " + totalY + "<br>"
     }

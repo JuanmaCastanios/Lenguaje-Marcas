@@ -17,12 +17,8 @@
 
             cartas = document.getElementsByTagName("img")
             for (let z = 0; z < cartas.length; z++) {
-                cartas[z].addEventListener("focus", function(){
-                    cambiarDelante(this)
-                })
-                cartas[z].addEventListener("blur", function(){
-                    cambiarDorso(this)
-                })  
+                cartas[z].onmouseover = cambiarDelante(this)
+                cartas[z].onmouseout = cambiarDorso(this) 
             } 
         }
 

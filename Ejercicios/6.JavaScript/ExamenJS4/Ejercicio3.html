@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            casillas = document.getElementsByTagName("td")
+            for (let i = 0; i < casillas.length; i++) {
+                casillas[i].addEventListener("click", function(){
+                    if(casillas[i].class === "1") cambiarColor(this,"red")
+                    if(casillas[i].class === "2") cambiarColor(this,"green")
+                    if(casillas[i].class === "3") cambiarColor(this,"yellow")
+                })
+            }
+        }
+        function cambiarColor(casilla,color){
+            casilla.style.backgroundColor = color
+        }
+    </script>
+</head>
+<body>
+    <table border='2'>
+        <tr>
+            <td width='10%' class="1" id='11'>&nbsp;</td>
+            <td width='10%' class="1" id='12'>&nbsp;</td>
+            <td width='10%' class="1" id='13'>&nbsp;</td>
+        </tr>
+        <tr>
+            <td width='10%' class="2" id='21'>&nbsp;</td>
+            <td width='10%' class="2" id='22'>&nbsp;</td>
+            <td width='10%' class="2" id='23'>&nbsp;</td>
+        </tr>
+        <tr>
+            <td width='10%' class="3" id='31'>&nbsp;</td>
+            <td width='10%' class="3" id='32'>&nbsp;</td>
+            <td width='10%' class="3" id='33'>&nbsp;</td>
+        </tr>
+    </table>
+</body>
+</html>
